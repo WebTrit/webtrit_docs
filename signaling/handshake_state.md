@@ -7,39 +7,43 @@ Handshake `state` sends only ones after a successful Websocket connection opens.
 | handshake | string | + | currently awaliable only `state` value |
 | keepalive_interval | number | + | signalling keepalive interval in milliseconds |
 | timestamp | number | + | server system time in milliseconds |
-| registration | object | + | session registration state |
-| lines | array of object | + | session lines states |
+| registration | [RegistrationObject](#registrationobject) | + | session registration state |
+| lines | array of [LineObject](#lineobject) | + | session lines states |
 
-**Registration object**
+#### RegistrationObject
 
 | Key | Type | Required | Description |
 | --- | --- | --- | --- |
-| status | string | + | registration status |
+| status | [RegistrationStatusString](#registrationstatusstring) | + | registration status |
 | code | number | | failed registration code |
 | reason | string | | failed registration reason |
 
-**Registration status** values:
-- registering
-- registered
-- registration_failed
-- unregistering
-- unregistered
+#### RegistrationStatusString
 
-**Line object**
+Values:
+- `registering`
+- `registered`
+- `registration_failed`
+- `unregistering`
+- `unregistered`
+
+#### LineObject
 
 | Key | Type | Required | Description |
 | --- | --- | --- | --- |
 | call_id | string | + | active call id |
-| call_logs | array of array | + | active call id logs |
+| call_logs | array of [CallLog](#calllog) | + | active call id logs |
 
-**Call log array**
+#### CallLog
 
 | Index | Type | Required | Description |
 | --- | --- | --- | --- |
 | 0 | number | + | request or event server system time in milliseconds |
 | 1 | object | + | request or event object |
 
-#### Example
+## Example
+
+Three lines with active call on first one and idle on others.
 
 ```json
 {
