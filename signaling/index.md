@@ -71,6 +71,7 @@ After a successful WebSocket connection open the **WebTrit Core** server sends t
 | Key | Type | Required | Description |
 | --- | --- | --- | --- |
 | response | string | + | [response type](responses/index.md) |
+| line | number | + | linue numer of all request |
 | transaction | string | + | unique transaction identifier of request |
 | data | object | | response data if necessary |
 
@@ -79,6 +80,7 @@ After a successful WebSocket connection open the **WebTrit Core** server sends t
 ```json
 {
   "response": "ack",
+  "line": 0,
   "transaction": "transaction-1"
 }
 ```
