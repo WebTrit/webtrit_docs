@@ -91,6 +91,7 @@ After a successful WebSocket connection open the **WebTrit Core** server sends t
 | --- | --- | --- | --- |
 | event | string | + | [event type](events/index.md) |
 | line | number | + | linue numer of event |
+| transaction | string | | unique transaction identifier of request issued this event |
 | call_id | string | | call id of call signaling event |
 | data | object | | event data if necessary |
 
