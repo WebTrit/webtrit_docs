@@ -43,8 +43,8 @@ After a successful WebSocket connection open the **WebTrit Core** server sends t
 | Key | Type | Required | Description |
 | --- | --- | --- | --- |
 | request | string | + | [request type](requests/index.md) |
-| transaction | string | + | unique transaction identifier |
 | line | number | + | linue numer of all request |
+| transaction | string | + | unique transaction identifier |
 | call_id | string | | call id of call signaling request |
 | data | object | | request data if necessary |
 
@@ -53,8 +53,8 @@ After a successful WebSocket connection open the **WebTrit Core** server sends t
 ```json
 {
   "request": "call",
-  "transaction": "transaction-1",
   "line": 0,
+  "transaction": "transaction-1",
   "call_id": "qwertyuiopasdfghjklzxcvbnm",
   "data": {
     "number": "1234567890",
