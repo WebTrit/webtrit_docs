@@ -41,7 +41,7 @@ After a successful WebSocket connection open the **WebTrit Core** server sends t
 ### Request
 
 | Key | Type | Required | Description |
-| --- | --- | --- | --- |
+| --- | --- | :---: | --- |
 | request | string | + | [request type](requests/index.md) |
 | line | number | + | linue numer of all request |
 | transaction | string | + | unique transaction identifier |
@@ -69,7 +69,7 @@ After a successful WebSocket connection open the **WebTrit Core** server sends t
 ### Response
 
 | Key | Type | Required | Description |
-| --- | --- | --- | --- |
+| --- | --- | :---: | --- |
 | response | string | + | [response type](responses/index.md) |
 | line | number | + | linue numer of all request |
 | transaction | string | + | unique transaction identifier of request |
@@ -88,7 +88,7 @@ After a successful WebSocket connection open the **WebTrit Core** server sends t
 ### Event
 
 | Key | Type | Required | Description |
-| --- | --- | --- | --- |
+| --- | --- | :---: | --- |
 | event | string | + | [event type](events/index.md) |
 | line | number | + | linue numer of event |
 | transaction | string | | unique transaction identifier of request issued this event |

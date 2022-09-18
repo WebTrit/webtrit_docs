@@ -3,7 +3,7 @@
 Handshake `state` sends only ones after a successful Websocket connection opens. Any requests can be sent only after this event is received.
 
 | Key | Type | Required | Description |
-| --- | --- | --- | --- |
+| --- | --- | :---: | --- |
 | handshake | string | + | currently awaliable only `state` value |
 | keepalive_interval | number | + | signalling keepalive interval in milliseconds |
 | timestamp | number | + | server system time in milliseconds |
@@ -13,7 +13,7 @@ Handshake `state` sends only ones after a successful Websocket connection opens.
 #### RegistrationObject
 
 | Key | Type | Required | Description |
-| --- | --- | --- | --- |
+| --- | --- | :---: | --- |
 | status | [RegistrationStatusString](#registrationstatusstring) | + | registration status |
 | code | number | | failed registration code |
 | reason | string | | failed registration reason |
@@ -30,14 +30,14 @@ Values:
 #### LineObject
 
 | Key | Type | Required | Description |
-| --- | --- | --- | --- |
+| --- | --- | :---: | --- |
 | call_id | string | + | active call id |
 | call_logs | array of [CallLog](#calllog) | + | active call id logs |
 
 #### CallLog
 
 | Index | Type | Required | Description |
-| --- | --- | --- | --- |
+| --- | --- | :---: | --- |
 | 0 | number | + | request or event server system time in milliseconds |
 | 1 | object | + | request or event object |
 
