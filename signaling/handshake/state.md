@@ -43,7 +43,7 @@ Values:
 
 ## Example
 
-Three lines with active call on first one and idle on others.
+Three lines with an active call on the first one and idle on others.
 
 ```json
 {
