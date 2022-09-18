@@ -4,7 +4,7 @@ Handshake `state` sends only ones after a successful Websocket connection opens.
 
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |
-| handshake | string | + | currently awaliable only `state` value |
+| handshake | string | + | `state` value |
 | keepalive_interval | number | + | signalling keepalive interval in milliseconds |
 | timestamp | number | + | server system time in milliseconds |
 | registration | [RegistrationObject](#registrationobject) | + | session registration state |

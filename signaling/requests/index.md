@@ -3,7 +3,6 @@
 ## Call signaling
 
 * [`call`](call.md)
-* [`keepalive`](keepalive.md)
 
 ## ICE
 

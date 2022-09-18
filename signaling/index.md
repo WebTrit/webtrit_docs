@@ -18,8 +18,8 @@ WTSP message must be string type with JSON serialized data.
 
 WTSP uses the next messages types:
 - `handshake`
-  - *from server to client*
-  - contain data to restore client session state
+  - *from server to client* and *from client to server*
+  - support current connection to active client session
 - `request`
   - *from client to server*
   - logically divided into two groups: 
@@ -37,6 +37,8 @@ WTSP uses the next messages types:
 ### Handshake
 
 After a successful WebSocket connection open the **WebTrit Core** server sends the current session [handshake `state`](handshake/state.md). Any requests from client to server can be sent only after this event is received, otherwise, the WebSocket connection will be closed with the appropriate [disconnect code](disconnect_codes.md).
+
+To detect any connection issue in idle connection as soon as possible next approach must be used/implemented. The client must send a [handshake `keepalive`](handshake/keepalive.md) with the interval provided in the [handshake `state`](handshake/state.md). The server echoes the received [handshake `keepalive`](handshake/keepalive.md).
 
 ### Request
 
@@ -113,7 +115,3 @@ After a successful WebSocket connection open the **WebTrit Core** server sends t
   }
 }
 ```
-
-## Keepalive
-
-To detect any connection issue as soon as possible, the client must send a [`keepalive` request](requests/keepalive.md) with the interval provided in the [handshake `state`](handshake/state.md).
