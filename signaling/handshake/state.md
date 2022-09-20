@@ -57,8 +57,14 @@ Three lines with an active call on the first one and idle on others.
     {
       "call_id": "qwertyuiopasdfghjklzxcvbnm",
       "call_logs": [
-        [1662114479751, <request or event object>],
-        ...
+        [
+          1662114479751,
+          {
+            "event": "incoming_call",
+            "callee": "123",
+            "caller": "456"
+          }
+        ]
       ]
     },
     null,
