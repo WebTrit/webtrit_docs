@@ -25,3 +25,12 @@ More reasonable handshake `keepalive` message:
   "timestamp": 1663526263768
 }
 ```
+
+Request/response or transaction like handshake `keepalive` message:
+
+```json
+{
+  "handshake": "keepalive",
+  "transaction": "transaction-1"
+}
+```
