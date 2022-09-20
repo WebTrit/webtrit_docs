@@ -47,7 +47,7 @@ Three lines with an active call on the first one and idle on others.
 
 ```json
 {
-  "event": "state",
+  "handshake": "state",
   "keepalive_interval": 30000,
   "timestamp": 1662114679648,
   "registration": {
