@@ -22,17 +22,19 @@ WTSP uses the next messages types:
   - support current connection to active client session
 - `request`
   - *from client to server*
-  - logically divided into two groups: 
-    - Call signaling
-    - ICE
+  - logically divided into three groups:
+    - _Registration_
+    - _ICE_
+    - _Call_
 - `response`
   - *from server to client*
   - acknowledge received `request`
 - `event`
   - *from server to client*
-  - logically divided into two groups: 
-    - Call signaling
-    - ICE
+  - logically divided into three groups:
+    - _Registration_
+    - _ICE_
+    - _Call_
 
 ### Handshake
 
@@ -45,9 +47,9 @@ To detect any connection issue in idle connection as soon as possible next appro
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |
 | request | string | + | [request type](requests/index.md) |
-| line | number | + | linue numer of all request |
-| transaction | string | + | unique transaction identifier |
-| call_id | string | | call id of call signaling request |
+| transaction | string | + | unique transaction identifier of request |
+| line | number | +[^1] | linue numer of _ICE_ and _Call_ request |
+| call_id | string | +[^2] | call id of _Call_ request |
 | data | object | | request data if necessary |
 
 #### Example
@@ -55,8 +57,8 @@ To detect any connection issue in idle connection as soon as possible next appro
 ```json
 {
   "request": "call",
-  "line": 0,
   "transaction": "transaction-1",
+  "line": 0,
   "call_id": "qwertyuiopasdfghjklzxcvbnm",
   "data": {
     "number": "1234567890",
@@ -73,8 +75,9 @@ To detect any connection issue in idle connection as soon as possible next appro
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |
 | response | string | + | [response type](responses/index.md) |
-| line | number | + | linue numer of all request |
 | transaction | string | + | unique transaction identifier of request |
+| line | number | +[^1] | linue numer of _ICE_ and _Call_ request |
+| call_id | string | +[^2] | call id of _Call_ request |
 | data | object | | response data if necessary |
 
 #### Example
@@ -82,8 +85,8 @@ To detect any connection issue in idle connection as soon as possible next appro
 ```json
 {
   "response": "ack",
-  "line": 0,
-  "transaction": "transaction-1"
+  "transaction": "transaction-1",
+  "line": 0
 }
 ```
 
@@ -92,9 +95,9 @@ To detect any connection issue in idle connection as soon as possible next appro
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |
 | event | string | + | [event type](events/index.md) |
-| line | number | + | linue numer of event |
 | transaction | string | | unique transaction identifier of request issued this event |
-| call_id | string | | call id of call signaling event |
+| line | number | +[^1] | linue numer of _ICE_ and _Call_ event |
+| call_id | string | +[^2] | call id of _Call_ event |
 | data | object | | event data if necessary |
 
 #### Example
@@ -115,3 +118,6 @@ To detect any connection issue in idle connection as soon as possible next appro
   }
 }
 ```
+
+[^1]: Only for _ICE_ and _Call_.
+[^2]: Only for _Call_.
