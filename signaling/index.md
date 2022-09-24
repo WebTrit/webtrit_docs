@@ -19,7 +19,7 @@ WTSP message must be string type with JSON serialized data.
 WTSP uses the next messages types:
 - `handshake`
   - *from server to client* and *from client to server*
-  - support current connection to active client session
+  - support current connection to an active client session
 - `request`
   - *from client to server*
   - logically divided into three groups:
