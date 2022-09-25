@@ -23,7 +23,7 @@ WTSP uses the next messages types:
 - `request`
   - *from client to server*
   - logically divided into three groups:
-    - _Registration_
+    - _Session_
     - _ICE_
     - _Call_
 - `response`
@@ -32,7 +32,7 @@ WTSP uses the next messages types:
 - `event`
   - *from server to client*
   - logically divided into three groups:
-    - _Registration_
+    - _Session_
     - _ICE_
     - _Call_
 

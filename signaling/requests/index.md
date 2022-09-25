@@ -1,6 +1,6 @@
 # Requests
 
-## Registration
+## Session
 
 _Not yet defined. But could be added in the following versions._
 
