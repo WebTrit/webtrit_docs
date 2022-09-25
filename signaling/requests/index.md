@@ -4,7 +4,7 @@
 
 _Not yet defined. But could be added in the following versions._
 
-## ICE
+## Line
 
 * [`ice_trickle`](ice_trickle.md)
 

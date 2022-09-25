@@ -24,7 +24,7 @@ WTSP uses the next messages types:
   - *from client to server*
   - logically divided into three groups:
     - _Session_
-    - _ICE_
+    - _Line_
     - _Call_
 - `response`
   - *from server to client*
@@ -33,7 +33,7 @@ WTSP uses the next messages types:
   - *from server to client*
   - logically divided into three groups:
     - _Session_
-    - _ICE_
+    - _Line_
     - _Call_
 
 ### Handshake
@@ -48,7 +48,7 @@ To detect any connection issue in idle connection as soon as possible next appro
 | --- | --- | :---: | --- |
 | request | string | + | [request type](requests/index.md) |
 | transaction | string | + | unique transaction identifier of request |
-| line | number | +[^1] | linue numer of _ICE_ and _Call_ request |
+| line | number | +[^1] | linue numer of _Line_ and _Call_ request |
 | call_id | string | +[^2] | call id of _Call_ request |
 | data | object | | request data if necessary |
 
@@ -76,7 +76,7 @@ To detect any connection issue in idle connection as soon as possible next appro
 | --- | --- | :---: | --- |
 | response | string | + | [response type](responses/index.md) |
 | transaction | string | + | unique transaction identifier of request |
-| line | number | +[^1] | linue numer of _ICE_ and _Call_ request |
+| line | number | +[^1] | linue numer of _Line_ and _Call_ request |
 | call_id | string | +[^2] | call id of _Call_ request |
 | data | object | | response data if necessary |
 
@@ -96,7 +96,7 @@ To detect any connection issue in idle connection as soon as possible next appro
 | --- | --- | :---: | --- |
 | event | string | + | [event type](events/index.md) |
 | transaction | string | | unique transaction identifier of request issued this event |
-| line | number | +[^1] | linue numer of _ICE_ and _Call_ event |
+| line | number | +[^1] | linue numer of _Line_ and _Call_ event |
 | call_id | string | +[^2] | call id of _Call_ event |
 | data | object | | event data if necessary |
 
@@ -119,5 +119,5 @@ To detect any connection issue in idle connection as soon as possible next appro
 }
 ```
 
-[^1]: Only for _ICE_ and _Call_.
+[^1]: Only for _Line_ and _Call_.
 [^2]: Only for _Call_.
