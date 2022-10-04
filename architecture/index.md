@@ -17,7 +17,7 @@ WebTrit system consists of the following components:
   * storing necessary data in the Database
   * sending push notifications via Push Notification Server
   * retrieving necessary data from PortaBilling
-* Subscriber Data Adapter Server - auxiliary system component to connect with external systems
+* Subscriber Data Adapter Server - auxiliary system component to connect with external systems (as example [PortaSwitch adapter](https://github.com/WebTrit/webtrit_adapter_portaswitch))
 * Database - [PostgreSQL](https://www.postgresql.org/)
 * WebRTC Server - [Janus](https://janus.conf.meetecho.com/)
 * Push Notification Server - [gorush](https://github.com/appleboy/gorush)
