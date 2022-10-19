@@ -50,7 +50,7 @@ To detect any connection issue in idle connection as soon as possible next appro
 | transaction | string | + | unique transaction identifier of request |
 | line | number | +[^1] | linue numer of _Line_ and _Call_ request |
 | call_id | string | +[^2] | call id of _Call_ request |
-| data | object | | request data if necessary |
+| | | | additional request properties if needed |
 
 #### Example
 
@@ -60,12 +60,11 @@ To detect any connection issue in idle connection as soon as possible next appro
   "transaction": "transaction-1",
   "line": 0,
   "call_id": "qwertyuiopasdfghjklzxcvbnm",
-  "data": {
-    "number": "1234567890",
-    "jsep": {
-      "type": "offer",
-      "sdp": "..."
-    }
+
+  "number": "1234567890",
+  "jsep": {
+    "type": "offer",
+    "sdp": "..."
   }
 }
 ```
@@ -78,7 +77,7 @@ To detect any connection issue in idle connection as soon as possible next appro
 | transaction | string | + | unique transaction identifier of request |
 | line | number | +[^1] | linue numer of _Line_ and _Call_ request |
 | call_id | string | +[^2] | call id of _Call_ request |
-| data | object | | response data if necessary |
+| | | | additional response properties if needed |
 
 #### Example
 
@@ -98,7 +97,7 @@ To detect any connection issue in idle connection as soon as possible next appro
 | transaction | string | | unique transaction identifier of request issued this event |
 | line | number | +[^1] | linue numer of _Line_ and _Call_ event |
 | call_id | string | +[^2] | call id of _Call_ event |
-| data | object | | event data if necessary |
+| | | | additional event properties if needed |
 
 #### Example
 
@@ -107,14 +106,13 @@ To detect any connection issue in idle connection as soon as possible next appro
   "event": "call",
   "line": 0
   "call_id": "qwertyuiopasdfghjklzxcvbnm",
-  "data": {
-    "callee": "0987654321",
-    "caller": "1234567890",
-    "caller_display_name": "Test User",
-    "jsep": {
-      "type": "offer",
-      "sdp": "..."
-    }
+
+  "callee": "0987654321",
+  "caller": "1234567890",
+  "caller_display_name": "Test User",
+  "jsep": {
+    "type": "offer",
+    "sdp": "..."
   }
 }
 ```
