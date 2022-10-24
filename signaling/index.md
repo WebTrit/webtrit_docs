@@ -104,7 +104,7 @@ To detect any connection issue in idle connection as soon as possible next appro
 ```json
 {
   "event": "call",
-  "line": 0
+  "line": 0,
   "call_id": "qwertyuiopasdfghjklzxcvbnm",
 
   "callee": "0987654321",
