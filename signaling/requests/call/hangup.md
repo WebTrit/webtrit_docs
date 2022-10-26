@@ -1,6 +1,6 @@
 # `hangup` call request
 
-Hang up the active call. An [`hangingup`](../../events/call/hangingup.md) event will be sent back after `hangup` request start processing. An [`hangup`](../../events/call/hangup.md) event will be sent back to confirm the call is hung up.
+Hang up the active call. A [`hangingup`](../../events/call/hangingup.md) event will be sent back after `hangup` request start processing. A [`hangup`](../../events/call/hangup.md) event will be sent back to confirm the call is hung up.
 
 ## Additional request properties
 

@@ -1,6 +1,6 @@
 # `calling` call event
 
-A [`outgoing_call`](../../requests/call/outgoing_call.md) request starts processing notification.
+An [`outgoing_call`](../../requests/call/outgoing_call.md) request starts processing notification.
 
 ## Additional request properties
 

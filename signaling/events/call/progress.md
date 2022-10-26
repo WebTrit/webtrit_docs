@@ -1,6 +1,6 @@
 # `progress` call event
 
-Notifying that the outgoing call is in the proceeding state and has early media, so the client can fihish WebRTC negotioaction with [SDP](https://developer.mozilla.org/en-US/docs/Glossary/SDP) answer in `jsep` property in this event, before call answered.
+Notifying that the outgoing call is in the proceeding state and has early media, so the client can fihish WebRTC negotiation with [SDP](https://developer.mozilla.org/en-US/docs/Glossary/SDP) answer in `jsep` property in this event, before call answered.
 
 In case the caller received a `progress` event, the following [`accepted`](./accepted.md) event will not contain a [SDP](https://developer.mozilla.org/en-US/docs/Glossary/SDP) answer in `jsep` property.
 

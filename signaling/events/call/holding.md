@@ -1,6 +1,6 @@
 # `holding` call event
 
-An [`hold`](../../requests/call/hold.md) request starts processing notification.
+A [`hold`](../../requests/call/hold.md) request starts processing notification.
 
 ## Additional request properties
 
