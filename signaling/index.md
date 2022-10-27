@@ -48,7 +48,7 @@ To detect any connection issue in idle connection as soon as possible next appro
 | --- | --- | :---: | --- |
 | request | string | + | [request type](requests/index.md) |
 | transaction | string | + | unique transaction identifier of request |
-| line | number | +[^1] | linue numer of _Line_ and _Call_ request |
+| line | number | +[^1] | line number of _Line_ and _Call_ requests |
 | call_id | string | +[^2] | call id of _Call_ request |
 | | | | additional request properties if needed |
 
@@ -75,7 +75,7 @@ To detect any connection issue in idle connection as soon as possible next appro
 | --- | --- | :---: | --- |
 | response | string | + | [response type](responses/index.md) |
 | transaction | string | + | unique transaction identifier of request |
-| line | number | +[^1] | linue numer of _Line_ and _Call_ request |
+| line | number | +[^1] | line number of _Line_ and _Call_ requests |
 | call_id | string | +[^2] | call id of _Call_ request |
 | | | | additional response properties if needed |
 
@@ -95,7 +95,7 @@ To detect any connection issue in idle connection as soon as possible next appro
 | --- | --- | :---: | --- |
 | event | string | + | [event type](events/index.md) |
 | transaction | string | | unique transaction identifier of request issued this event |
-| line | number | +[^1] | linue numer of _Line_ and _Call_ event |
+| line | number | +[^1] | line number of _Line_ and _Call_ events |
 | call_id | string | +[^2] | call id of _Call_ event |
 | | | | additional event properties if needed |
 
