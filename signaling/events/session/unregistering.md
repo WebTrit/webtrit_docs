@@ -1,6 +1,6 @@
 # `unregistering` session event
 
-A `SIP` unregistration in process notification.
+A `SIP` unregistration started notification.
 
 ## Additional request properties
 

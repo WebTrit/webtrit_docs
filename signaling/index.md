@@ -10,7 +10,7 @@ wss://<WebTrit Core host>[:<WebTrit Core port>]/signaling/v1?token=<token>[&forc
 ```
 where:
 - `token` - session token received with [WebTrit Core API](../api/index.md#core)
-- `force` - flag to determine, do current connection must close the active one if it exit or not
+- `force` - flag to define, must current connection close the active one if it exists (`true`) or not (`false`)
 
 WTSP message must be string type with JSON serialized data.
 
