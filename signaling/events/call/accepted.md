@@ -30,6 +30,7 @@ An [`accept`](../../requests/call/accept.md) request with [SDP](https://develope
 
   "jsep": {
     "type": "answer",
+    "sdp": "..."
   }
 }
 ```
