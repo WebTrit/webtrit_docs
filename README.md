@@ -1,4 +1,4 @@
-# WebTrit Documentations
+# WebTrit Documentation
 
 * [Architecture](architecture/index.md)
 * [Core API](api/index.md)
