@@ -7,16 +7,17 @@
 * [`registration_failed`](./session/registration_failed.md)
 * [`unregistered`](./session/unregistered.md)
 * [`unregistering`](./session/unregistering.md)
+* [`error`](./session/error.md)
 
 ## Line
 
-* [`error`](./line/error.md)
 * [`ice_hangup`](./line/ice_hangup.md)
 * [`ice_media`](./line/ice_media.md)
 * [`ice_slowlink`](./line/ice_slowlink.md)
 * [`ice_trickle`](./line/ice_trickle.md)
 * [`ice_webrtcup`](./line/ice_webrtcup.md)
 * [`transfer`](./line/transfer.md)
+* [`error`](./line/error.md)
 
 ## Call
 
@@ -24,7 +25,6 @@
 * [`accepting`](./call/accepting.md)
 * [`calling`](./call/calling.md)
 * [`declining`](./call/declining.md)
-* [`error_call`](./call/error_call.md)
 * [`hangingup`](./call/hangingup.md)
 * [`hangup`](./call/hangup.md)
 * [`holding`](./call/holding.md)
@@ -38,3 +38,4 @@
 * [`updated`](./call/updated.md)
 * [`updating_call`](./call/updating_call.md)
 * [`updating`](./call/updating.md)
+* [`error`](./call/error.md)
