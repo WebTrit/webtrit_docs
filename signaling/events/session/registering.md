@@ -2,7 +2,7 @@
 
 A `SIP` registration started notification.
 
-## Additional request properties
+## Additional event properties
 
 None.
 

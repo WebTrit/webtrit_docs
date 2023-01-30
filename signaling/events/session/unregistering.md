@@ -2,7 +2,7 @@
 
 A `SIP` unregistration started notification.
 
-## Additional request properties
+## Additional event properties
 
 None.
 

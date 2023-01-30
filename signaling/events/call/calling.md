@@ -2,7 +2,7 @@
 
 An [`outgoing_call`](../../requests/call/outgoing_call.md) request starts processing notification.
 
-## Additional request properties
+## Additional event properties
 
 None.
 

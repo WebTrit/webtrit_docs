@@ -2,7 +2,7 @@
 
 Notifying that the outgoing call is in the proceeding state, so the client can play a ringback tone for the user since there are no early media sent.
 
-## Additional request properties
+## Additional event properties
 
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |

@@ -2,7 +2,7 @@
 
 A [`decline`](../../requests/call/decline.md) request starts processing notification.
 
-## Additional request properties
+## Additional event properties
 
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |

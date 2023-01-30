@@ -2,7 +2,7 @@
 
 An [`accept`](../../requests/call/accept.md) request with [SDP](https://developer.mozilla.org/en-US/docs/Glossary/SDP) offer starts processing notification.
 
-## Additional request properties
+## Additional event properties
 
 None.
 

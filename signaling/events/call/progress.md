@@ -4,7 +4,7 @@ Notifying that the outgoing call is in the proceeding state and has early media,
 
 In case the caller received a `progress` event, the following [`accepted`](./accepted.md) event will not contain a [SDP](https://developer.mozilla.org/en-US/docs/Glossary/SDP) answer in `jsep` property.
 
-## Additional request properties
+## Additional event properties
 
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |

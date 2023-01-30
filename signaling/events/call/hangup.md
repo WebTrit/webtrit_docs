@@ -2,7 +2,7 @@
 
 Notifying that the call is declined or being hung up. Which is basically a `SIP` error event notification as it includes the `code` and `reason` properties. A regular `BYE`, for instance, would be notified with `200` and `SIP BYE`, although a more verbose description may be provided as well.
 
-## Additional request properties
+## Additional event properties
 
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |

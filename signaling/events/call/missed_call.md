@@ -2,7 +2,7 @@
 
 Notifying that there are no empty lines to process the incomming call. In this case incomming call ended with `486` code.
 
-## Additional request properties
+## Additional event properties
 
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |

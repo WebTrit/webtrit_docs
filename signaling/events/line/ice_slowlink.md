@@ -2,7 +2,7 @@
 
 Notifying that the WebRTC server is reporting trouble sending/receiving (`uplink: true/false`) media on this `PeerConnection`.
 
-## Additional request properties
+## Additional event properties
 
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |

@@ -4,7 +4,7 @@ An [`accept`](../../requests/call/accept.md) request with [SDP](https://develope
 
 An [`accept`](../../requests/call/accept.md) request with [SDP](https://developer.mozilla.org/en-US/docs/Glossary/SDP) offer finish processing notification. In this case `jsep` propery provided.
 
-## Additional request properties
+## Additional event properties
 
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |

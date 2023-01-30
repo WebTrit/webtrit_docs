@@ -2,7 +2,7 @@
 
 A [`hangup`](../../requests/call/hangup.md) request starts processing notification.
 
-## Additional request properties
+## Additional event properties
 
 None.
 

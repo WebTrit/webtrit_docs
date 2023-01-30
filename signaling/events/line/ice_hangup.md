@@ -2,7 +2,7 @@
 
 Notifying that the `PeerConnection` was closed, either by the WebRTC server or by the user/application, and as such cannot be used anymore.
 
-## Additional request properties
+## Additional event properties
 
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |

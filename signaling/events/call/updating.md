@@ -2,7 +2,7 @@
 
 An [`update`](../../requests/call/update.md) request starts processing notification.
 
-## Additional request properties
+## Additional event properties
 
 None.
 

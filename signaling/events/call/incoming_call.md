@@ -2,7 +2,7 @@
 
 Notifying about incomming call, that is actullay `SIP INVITE`.
 
-## Additional request properties
+## Additional event properties
 
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |
@@ -17,7 +17,6 @@ Notifying about incomming call, that is actullay `SIP INVITE`.
 ```json
 {
   "event": "incoming_call",
-  "transaction": "transaction-1",
   "line": 0,
   "call_id": "qwertyuiopasdfghjklzxcvbnm",
 

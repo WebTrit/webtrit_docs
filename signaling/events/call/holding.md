@@ -2,7 +2,7 @@
 
 A [`hold`](../../requests/call/hold.md) request starts processing notification.
 
-## Additional request properties
+## Additional event properties
 
 None.
 

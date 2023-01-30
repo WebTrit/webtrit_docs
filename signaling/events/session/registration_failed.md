@@ -2,7 +2,7 @@
 
 A failed `SIP` registration notification.
 
-## Additional request properties
+## Additional event properties
 
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |

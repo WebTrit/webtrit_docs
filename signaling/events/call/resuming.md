@@ -2,7 +2,7 @@
 
 An [`unhold`](../../requests/call/unhold.md) request starts processing notification.
 
-## Additional request properties
+## Additional event properties
 
 None.
 

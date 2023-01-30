@@ -2,7 +2,7 @@
 
 Notifying that the outgoing call is in the ringing state.
 
-## Additional request properties
+## Additional event properties
 
 None.
 

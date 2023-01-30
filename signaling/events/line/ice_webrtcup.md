@@ -2,7 +2,7 @@
 
 Notifying that `ICE` and `DTLS` succeeded, and so the WebRTC server correctly established a PeerConnection with the user/application.
 
-## Additional request properties
+## Additional event properties
 
 None.
 
