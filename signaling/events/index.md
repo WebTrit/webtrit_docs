@@ -30,6 +30,7 @@
 * [`holding`](./call/holding.md)
 * [`incoming_call`](./call/incoming_call.md)
 * [`missed_call`](./call/missed_call.md)
+* [`notify`](./call/notify.md)
 * [`proceeding`](./call/proceeding.md)
 * [`progress`](./call/progress.md)
 * [`resuming`](./call/resuming.md)
