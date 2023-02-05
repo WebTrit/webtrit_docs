@@ -6,7 +6,7 @@ Notifying that the WebRTC server is receiving audio/video on this `PeerConnectio
 
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |
-| type | [MediaTypeString](#typestring) | + | |
+| type | [MediaTypeString](#mediatypestring) | + | |
 | receiving | boolean | + | |
 
 #### MediaTypeString
