@@ -6,10 +6,10 @@ Notifying about incomming notify, that is actullay `SIP NOTIFY`.
 
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |
-| notify | string | | |
+| notify | string | | name of the event that the user is subscribed to |
 | subscription_state | [SubscriptionStateString](#subscriptionstatestring) | | |
-| content_type | string | | |
-| content | string | + | |
+| content_type | string | | content-type of the message |
+| content | string | + | content of the message |
 
 #### SubscriptionStateString
 
