@@ -1,46 +1,48 @@
 # WebTrit Signaling Protocol
 
-**WebTrit Signaling Protocol (WTSP)** goal is to organize reliable, predictable, and self-recoverable mechanisms to connect **WebTrit apps** with **WebTrit Core**.
+The **WebTrit Signaling Protocol (WTSP)** is designed to establish a reliable, predictable, and [self-recoverable mechanism](features/self_recoverable_mechanism.md) for connecting **WebTrit apps** to the **WebTrit Core**.
 
-WTSP uses WebSocket as a communications protocol, with obligatory specifying sub-protocol to [`webtrit-protocol`](websocket_subprotocol.md).
+WTSP utilizes WebSocket as its communication protocol, mandating the specification of the sub-protocol as [`webtrit-protocol`](websocket_subprotocol.md).
 
 WTSP URL structure:
 ```
 wss://<WebTrit Core host>[:<WebTrit Core port>]/signaling/v1?token=<token>[&force=<true | false (by default)>]
 ```
 where:
-- `token` - session token received with [WebTrit Core API](../api/index.md#core)
-- `force` - flag to define, must current connection close the active one if it exists (`true`) or not (`false`)
+- `token` - a session token obtained from the [WebTrit Core API](../api/index.md#core)
+- `force` - a flag to define, must current connection close the active one if it exists (`true`) or not (`false`)
 
-WTSP message must be string type with JSON serialized data.
+WTSP message data is a string serialized in the JSON format.
 
 ## Messages
 
-WTSP uses the next messages types:
+WTSP classifies messages into the following categories:
 - `handshake`
-  - *from server to client* and *from client to server*
-  - support current connection to an active client session
+  - Direction: *server to client* and *client to server*.
+  - Purpose: to maintain the current connection with an active client session.
 - `request`
-  - *from client to server*
-  - logically divided into three groups:
+  - Direction: *client to server*.
+  - Purpose: to execute an action.
+  - Logically divided into three groups:
     - _Session_
     - _Line_
     - _Call_
 - `response`
-  - *from server to client*
-  - acknowledge received `request`
+  - Direction: *server to client*.
+  - Purpose: to acknowledge a received `request`.
 - `event`
-  - *from server to client*
-  - logically divided into three groups:
+  - Direction: *server to client*.
+  - Purpose: to notify about the progress of action execution and external events.
+  - Logically divided into three groups:
     - _Session_
     - _Line_
     - _Call_
 
 ### Handshake
 
-After a successful WebSocket connection open the **WebTrit Core** server sends the current session [handshake `state`](handshake/state.md). Any requests from client to server can be sent only after this event is received, otherwise, the WebSocket connection will be closed with the appropriate [disconnect code](disconnect_codes.md).
+Upon successful WebSocket connection, the **WebTrit Core** server sends the current session's [handshake `state`](handshake/state.md). Clients should only send requests after receiving this message; failing to do so will result in the WebSocket connection being closed with an appropriate [disconnect code](disconnect_codes.md).
 
-To detect any connection issue in idle connection as soon as possible next approach must be used/implemented. The client must send a [handshake `keepalive`](handshake/keepalive.md) with the interval provided in the [handshake `state`](handshake/state.md). The server echoes the received [handshake `keepalive`](handshake/keepalive.md).
+To promptly detect WebSocket connection issues during idle periods, clients must send a [handshake `keepalive`](handshake/keepalive.md) message at intervals specified in the [handshake `state`](handshake/state.md). The server echoes the received [handshake `keepalive`](handshake/keepalive.md).
 
 ### Request
 
@@ -77,7 +79,7 @@ To detect any connection issue in idle connection as soon as possible next appro
 | transaction | string | + | unique transaction identifier of request |
 | line | number | +[^1] | line number of _Line_ and _Call_ requests |
 | call_id | string | +[^2] | call id of _Call_ request |
-| | | | additional response properties if needed |
+| | | | additional response properties, if needed |
 
 #### Example
 
@@ -97,7 +99,7 @@ To detect any connection issue in idle connection as soon as possible next appro
 | transaction | string | | unique transaction identifier of request issued this event |
 | line | number | +[^1] | line number of _Line_ and _Call_ events |
 | call_id | string | +[^2] | call id of _Call_ event |
-| | | | additional event properties if needed |
+| | | | additional event properties, if needed |
 
 #### Example
 
@@ -116,6 +118,10 @@ To detect any connection issue in idle connection as soon as possible next appro
   }
 }
 ```
+
+## Features
+
+[Self-recoverable mechanism](features/self_recoverable_mechanism.md)
 
 [^1]: Only for _Line_ and _Call_.
 [^2]: Only for _Call_.
