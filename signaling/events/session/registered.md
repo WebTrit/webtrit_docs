@@ -4,7 +4,15 @@ A successful `SIP` registration notification.
 
 ## Additional event properties
 
-None.
+| Key | Type | Required | Description |
+| --- | --- | :---: | --- |
+| authorization | [AuthorizationStatusString](#mediatypestring) | | |
+
+#### MediaTypeString
+
+AuthorizationStatusString:
+- `ok`
+- `failure`
 
 ## Example
 
