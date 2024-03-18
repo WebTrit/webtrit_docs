@@ -6,18 +6,17 @@ A successful `SIP` registration notification.
 
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |
-| authorization | [AuthorizationStatusString](#mediatypestring) | | |
+| phrase | string | | a message that is additionally received together with the confirmation of registration |
 
-#### MediaTypeString
-
-AuthorizationStatusString:
+#### Typical `phrase`:
 - `ok`
-- `failure`
+- `authorization_failure`
 
 ## Example
 
 ```json
 {
-  "event": "registered"
+  "event": "registered",
+  "phrase": "ok"
 }
 ```
