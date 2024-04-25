@@ -1,7 +1,15 @@
 # WebTrit API
 
+The WebTrit API builds on REST principles.
+
 ## Core
 
-The WebTrit Core API builds on REST principles. It provides the possibility to create a session for the client app and retrieve all necessary app information within this session.
+The WebTrit Core API provides the possibility to create a session for the client app and retrieve all necessary app information within this session.
 
-* [WebTrit Demo Swagger UI](https://core.demo.webtrit.com/swagger-ui)
+* [WebTrit Core API (Swagger UI)](https://webtrit.github.io/webtrit_core_pages/)
+
+## Adapter
+
+The WebTrit Adapter API used by the WebTrit Core to integrate with external Billing systems.
+
+* [WebTrit Adapter API (Swagger UI)](https://webtrit.github.io/webtrit_adapter)
