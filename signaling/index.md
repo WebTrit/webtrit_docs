@@ -119,6 +119,42 @@ To promptly detect WebSocket connection issues during idle periods, clients must
 }
 ```
 
+## Logical groups
+
+**WTSP** organizes its communication into logical groups to handle different aspects of the connection lifecycle and operations. These groups include **Session**, **Line**, and **Call**, each serving a distinct purpose.
+
+### Session
+
+A **Session** represents a unique connection between the **WebTrit apps** and the **WebTrit Core**. During the session’s lifecycle, the **WebTrit Core** establishes and manages a corresponding `SIP` registration on the SIP server.
+
+**Sessions** can be classified into two types:
+* *permanent*: `SIP` registration persists even without an active session.
+* *transient*: `SIP` registration remains active only while the session is active.
+
+By default, all sessions are _transient_. A session becomes _permanent_ if a push token of a specific type is provided for the **WebTrit apps**. For more details on push tokens, refer to the [/app/push-tokens](https://webtrit.github.io/webtrit_core_pages/#/app/createAppPushToken) API.
+
+### Line
+
+A **Line** is a logical container for handling one active call at a time. Lines are identified using the `line` number property in `request`, `response`, and `event` messages.
+
+Key points about lines:
+* Lines allow **WebTrit apps** to manage multiple simultaneous calls within a single session.
+* The number of available lines for a session is configured on the **WebTrit Core**.
+* The current count and state of lines for a particular session can be retrieved from the `lines` property in the [handshake `state`](handshake/state.md).
+
+Behavior:
+1. _Outgoing Calls:_
+To initiate an outgoing call, a free line must be selected. Attempting to place a call on a line with an existing active call will result in an error.
+2. _Incoming Calls:_
+Incoming calls are automatically assigned to the first available free line. If all lines are occupied with active calls, the new incoming call will be automatically rejected with the appropriate disconnect code.
+
+### Call
+
+A **Call** represents an active outgoing or incoming call and is identified by the `call_id` string property in `request`, `response` and `event` messages.
+
+Key characteristics of a call:
+* A call exists within a specific **Line**.
+
 ## Features
 
 [Self-recoverable mechanism](features/self_recoverable_mechanism.md)
