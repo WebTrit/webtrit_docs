@@ -9,6 +9,7 @@ In case the caller received a `progress` event, the following [`accepted`](./acc
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |
 | callee | string | + | |
+| is_focus | boolean | | Indicate is `isfocus` feature parameter in the Contact header |
 | jsep | [RTCSessionDescription](https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription) | + | session description |
 
 ## Example

@@ -8,6 +8,7 @@ An [`accept`](../../requests/call/accept.md) request with [SDP](https://develope
 
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |
+| is_focus | boolean | | Indicate is `isfocus` feature parameter in the Contact header |
 | jsep | [RTCSessionDescription](https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription) | | session description |
 
 ## Example
