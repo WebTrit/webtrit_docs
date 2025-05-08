@@ -9,6 +9,7 @@ Handshake `state` sends only ones after a successful Websocket connection opens.
 | timestamp | number | + | server system time in milliseconds |
 | registration | [RegistrationObject](#registrationobject) | + | session registration state |
 | lines | array of [LineObject](#lineobject) | + | session lines states |
+| guest_line | [LineObject](#lineobject) | | session guest line state |
 
 #### RegistrationObject
 
