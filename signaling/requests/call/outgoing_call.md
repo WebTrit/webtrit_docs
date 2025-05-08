@@ -17,6 +17,7 @@ In case the caller received a [`progress`](../../events/call/progress.md) event,
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |
 | number | string | + | number to call |
+| from | string | | from number (apply only for guest line) |
 | refer_id | number | | in case this is the result of a [`transfer`](../../events/line/transfer.md) event, the unique identifier that addresses it |
 | jsep | [RTCSessionDescription](https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription) | + | session description |
 

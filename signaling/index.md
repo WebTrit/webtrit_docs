@@ -50,7 +50,7 @@ To promptly detect WebSocket connection issues during idle periods, clients must
 | --- | --- | :---: | --- |
 | request | string | + | [request type](requests/index.md) |
 | transaction | string | + | unique transaction identifier of request |
-| line | number | +[^1] | line number of _Line_ and _Call_ requests |
+| line | number | +[^1] | line number of _Line_ and _Call_ requests (`null` for guest line) |
 | call_id | string | +[^2] | call id of _Call_ request |
 | | | | additional request properties if needed |
 
@@ -141,6 +141,7 @@ Key points about lines:
 * Lines allow **WebTrit apps** to manage multiple simultaneous calls within a single session.
 * The number of available lines for a session is configured on the **WebTrit Core**.
 * The current count and state of lines for a particular session can be retrieved from the `lines` property in the [handshake `state`](handshake/state.md).
+* The special guest line type exist for making outgoing call with alternate from number. `line` value for such type of line is `null`.
 
 Behavior:
 1. _Outgoing Calls:_
