@@ -15,6 +15,7 @@ _Not yet defined. But could be added in the following versions._
 * [`hangup`](./call/hangup.md)
 * [`hold`](./call/hold.md)
 * [`outgoing_call`](./call/outgoing_call.md)
+* [`progress`](./call/progress.md)
 * [`transfer`](./call/transfer.md)
 * [`unhold`](./call/unhold.md)
 * [`update`](./call/update.md)
