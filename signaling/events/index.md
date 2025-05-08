@@ -29,6 +29,7 @@
 * [`hangup`](./call/hangup.md)
 * [`holding`](./call/holding.md)
 * [`incoming_call`](./call/incoming_call.md)
+* [`keyframe_sent`](./call/keyframe_sent.md)
 * [`missed_call`](./call/missed_call.md)
 * [`notify`](./call/notify.md)
 * [`proceeding`](./call/proceeding.md)
