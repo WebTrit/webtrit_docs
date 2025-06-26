@@ -18,6 +18,7 @@ In case the caller received a [`progress`](../../events/call/progress.md) event,
 | --- | --- | :---: | --- |
 | number | string | + | number to call |
 | refer_id | number | | in case this is the result of a [`transfer`](../../events/line/transfer.md) event, the unique identifier that addresses it |
+| replaces | string | | in case this is a replacement of an existing call, the `call_id` of the call to replace |
 | jsep | [RTCSessionDescription](https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription) | + | session description |
 
 ## Example
