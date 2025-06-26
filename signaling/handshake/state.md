@@ -9,6 +9,7 @@ Handshake `state` sends only ones after a successful Websocket connection opens.
 | timestamp | number | + | server system time in milliseconds |
 | registration | [RegistrationObject](#registrationobject) | + | session registration state |
 | lines | array of [LineObject](#lineobject) | + | session lines states |
+| user_dialogs | array of [UserDialog](#userdialog) | + | user dialogs |
 
 #### RegistrationObject
 
@@ -41,6 +42,18 @@ Values:
 | 0 | number | + | request or event server system time in milliseconds |
 | 1 | object | + | request or event object |
 
+#### UserDialog
+| Index | Type | Required | Description |
+| --- | --- | :---: | --- |
+| id | string | + | dialog id |
+| state | string | + | dialog state e.g "proceeding \| confirmed" |
+| call_id | string | + | call id |
+| direction | string | + | call direction e.g "initiator \| recipient" |
+| local_tag | string | + | local tag |
+| remote_tag | string | + | remote tag |
+| remote_number | string | + | calle sip number |
+| remote_display_name | string | + | calle display name |
+
 ## Example
 
 Three lines with an active call on the first one and idle on others.
@@ -69,6 +82,18 @@ Three lines with an active call on the first one and idle on others.
     },
     null,
     null
+  ]
+  "dialogs": [
+    {
+      "id": "dialog123",
+      "state": "confirmed",
+      "call_id": "qwertyuiopasdfghjklzxcvbnm",
+      "direction": "initiator",
+      "local_tag": "localTag123",
+      "remote_tag": "remoteTag456",
+      "remote_number": "1337",
+      "remote_display_name": "John Doe"
+    }
   ]
 }
 ```
