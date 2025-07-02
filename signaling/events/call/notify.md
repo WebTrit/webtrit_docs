@@ -19,7 +19,7 @@ Notifying about incomming notify, that is actullay `SIP NOTIFY`.
 ## Dialogs notify event sub-properties
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |
-| user_dialogs | array of [UserDialog](#userdialog) | + | user dialogs |
+| user_active_calls | array of [UserActiveCall](#useractivecall) | + | user active calls |
 
 #### SubscriptionStateString
 
@@ -28,11 +28,11 @@ Values:
 - `terminated`
 - `active`
 
-#### UserDialog
+#### UserActiveCall
 | Index | Type | Required | Description |
 | --- | --- | :---: | --- |
-| id | string | + | dialog id |
-| state | string | + | dialog state e.g "proceeding \| confirmed" |
+| id | string | + | id |
+| state | string | + | call state e.g "proceeding \| confirmed" |
 | call_id | string | + | call id |
 | direction | string | + | call direction e.g "initiator \| recipient" |
 | local_tag | string | + | local tag |
@@ -62,7 +62,7 @@ Values:
 
   "notify": "dialog",
   "subscription_state": "active",
-  "user_dialogs": [
+  "user_active_calls": [
     {
       "id": "asldkaslkdkasdj",
       "state": "confirmed",
