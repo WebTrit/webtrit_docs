@@ -9,7 +9,7 @@ Handshake `state` sends only ones after a successful Websocket connection opens.
 | timestamp | number | + | server system time in milliseconds |
 | registration | [RegistrationObject](#registrationobject) | + | session registration state |
 | lines | array of [LineObject](#lineobject) | + | session lines states |
-| user_active_calls | array of [UserActiveCall](#useractivecall) | + | user active calls |
+| user_active_calls | array of [UserActiveCall](#useractivecall) \| null | + | user active calls, or null if feature not supported |
 
 #### RegistrationObject
 
