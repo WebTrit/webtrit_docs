@@ -58,28 +58,21 @@ group 4. Signaling WebSocket Connection (for calls)
     App -> Core: WSS /tenant/Abc/signaling/v1\nAuthorization: Bearer {token}
     
     Core -> Core: Validate session
+    Core -> AdapterA: GET /user
+    AdapterA -> Core: User SIP credentials\n{sip_username, sip_password}
     Core -> Janus: Setup WebRTC connection
     Janus -> Core: Connection ready
-    
-    opt Get user SIP credentials
-        Core -> AdapterA: GET /user
-        AdapterA -> Core: User SIP credentials\n{sip_username, sip_password}
-    end
-    
+
     Core -> App: WebSocket connection established
     note right of App: Ready for VoIP calls
 end
 
 group 5. Messaging WebSocket Connection
     App -> Core: WSS /tenant/Abc/messaging/v1\nAuthorization: Bearer {token}
-    
+
     Core -> Core: Validate session
-    
-    opt Metadata check
-        Core -> AdapterA: Verify messaging permissions
-        AdapterA -> Core: Permission confirmed
-    end
-    
+    Core -> AdapterA: GET /user
+    AdapterA -> Core: User phone numbers and display name\n{sms_numbers, alias_name, first_name, last_name etc}
     Core -> App: WebSocket connection established
     note right of App: Ready for messaging
 end
