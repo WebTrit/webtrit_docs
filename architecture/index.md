@@ -22,6 +22,8 @@ WebTrit system consists of the following components:
 * WebRTC Server - [Janus](https://janus.conf.meetecho.com/)
 * Push Notification Server - [gorush](https://github.com/appleboy/gorush)
 
+![WebTrit system sequence diagram](diagrams/WebTritSystem_Sequence.png)
+
 ## Deployment
 
 ![WebTrit system deployment diagram](diagrams/WebTritSystem_Deployment.png)
