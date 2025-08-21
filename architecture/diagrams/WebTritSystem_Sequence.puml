@@ -1,0 +1,154 @@
+@startuml WebTrit_Architecture_Sequence
+!theme plain
+skinparam backgroundColor white
+skinparam handwritten false
+skinparam sequenceMessageAlign center
+
+title WebTrit Architecture - Sequence Diagram
+
+participant "Mobile App\n(WebTrit App)" as App
+participant "WebTrit Core" as Core  
+participant "WebTrit Adapter A\n(for Tenant Abc)" as AdapterA
+participant "WebTrit Adapter B\n(for Tenant fgh)" as AdapterB
+participant "Janus WebRTC\nServer" as Janus
+
+note over Core
+Configuration: TENANT_ADAPTER_URLS
+Abc=https://abc.com
+fgh=http://f.q.h.net
+Default ADAPTER_URL for no tenant
+end note
+
+group 1. System Info Request (Tenant Abc)
+    App -> Core: GET /tenant/Abc/api/v1/system-info
+    note right of App: URL: https://core.demo.webtrit.com/tenant/Abc/api/v1
+    
+    Core -> Core: Determine tenantId = "Abc"
+    Core -> Core: Route to https://abc.com
+    
+    Core -> AdapterA: GET /system-info
+    AdapterA -> Core: SystemInfoShowResponse\n(available auth methods, etc.)
+    Core -> App: SystemInfoShowResponse
+    
+    App -> App: Determine available\nauthentication methods
+end
+
+group 2. User Authentication (Tenant Abc)
+    App -> Core: POST /tenant/Abc/api/v1/session\n{user_ref, password, type, identifier}
+    
+    Core -> Core: Route to Adapter A\nbased on tenantId="Abc"
+    
+    Core -> AdapterA: POST /session\n{user_ref, password, type, identifier}
+    AdapterA -> AdapterA: Validate credentials
+    AdapterA -> Core: SessionResponse\n{user_id, token}
+    Core -> App: SessionResponse\n{user_id, token}
+end
+
+group 3. Get User Info (Tenant Abc)
+    App -> Core: GET /tenant/Abc/api/v1/user\nAuthorization: Bearer {token}
+    
+    Core -> Core: Validate session & route\nto Adapter A
+    
+    Core -> AdapterA: GET /user\n{session_data}
+    AdapterA -> Core: UserInfoShowResponse\n{numbers, balance, status, etc.}
+    Core -> App: UserInfoShowResponse
+end
+
+group 4. Signaling WebSocket Connection (for calls)
+    App -> Core: WSS /tenant/Abc/signaling/v1\nAuthorization: Bearer {token}
+    
+    Core -> Core: Validate session
+    Core -> Janus: Setup WebRTC connection
+    Janus -> Core: Connection ready
+    
+    opt Get user SIP credentials
+        Core -> AdapterA: GET /user
+        AdapterA -> Core: User SIP credentials\n{sip_username, sip_password}
+    end
+    
+    Core -> App: WebSocket connection established
+    note right of App: Ready for VoIP calls
+end
+
+group 5. Messaging WebSocket Connection
+    App -> Core: WSS /tenant/Abc/messaging/v1\nAuthorization: Bearer {token}
+    
+    Core -> Core: Validate session
+    
+    opt Metadata check
+        Core -> AdapterA: Verify messaging permissions
+        AdapterA -> Core: Permission confirmed
+    end
+    
+    Core -> App: WebSocket connection established
+    note right of App: Ready for messaging
+end
+
+group 6. Multi-Adapter Example (Different Tenant)
+    note over App: Different user with tenantId="fgh"
+    
+    App -> Core: GET /tenant/fgh/api/v1/system-info
+    
+    Core -> Core: Determine tenantId = "fgh"
+    Core -> Core: Route to http://f.q.h.net
+    
+    Core -> AdapterB: GET /system-info
+    AdapterB -> Core: SystemInfoShowResponse
+    Core -> App: SystemInfoShowResponse
+    
+    App -> Core: POST /tenant/fgh/api/v1/session\n{credentials}
+    Core -> AdapterB: POST /session\n{credentials}
+    AdapterB -> Core: SessionResponse
+    Core -> App: SessionResponse
+    
+    App -> Core: GET /tenant/fgh/api/v1/user\nAuthorization: Bearer {token}
+    Core -> AdapterB: GET /user
+    AdapterB -> Core: UserInfoShowResponse
+    Core -> App: UserInfoShowResponse
+end
+
+group 7. Default Adapter (No Tenant specified)
+    note over App: Request without tenant in path
+    
+    App -> Core: GET /api/v1/system-info
+    note right of App: URL: https://core.demo.webtrit.com/api/v1
+    
+    Core -> Core: No tenantId specified\nUse default ADAPTER_URL
+    
+    Core -> AdapterA: GET /system-info
+    note right of Core: Using default adapter
+    AdapterA -> Core: SystemInfoShowResponse
+    Core -> App: SystemInfoShowResponse
+end
+
+note over App, AdapterB
+Additional API calls available:
+• GET /user/contacts - Corporate directory
+• GET /user/history - Call history (CDRs) 
+• GET /user/voicemails - Voicemail messages
+• GET /user/recordings/{id} - Call recordings
+• POST /app/push-tokens - Push notification tokens
+• Custom methods: /custom/public/{method}, /custom/private/{method}
+end note
+
+note over Core
+WebTrit Core responsibilities:
+• Proxy all App requests to appropriate Adapter
+• Manage tenant routing via TENANT_ADAPTER_URLS
+• Handle WebRTC signaling through Janus
+• Manage messaging and notifications
+• Session management and authentication
+• Push notifications coordination
+end note
+
+note over AdapterA, AdapterB
+WebTrit Adapter responsibilities:
+• Integration with external systems (PBX, BSS)
+• User data management and validation
+• Call detail records (CDRs)
+• Voicemail and recording access
+• Corporate directory services
+• Custom business logic implementation
+end note
+
+@enduml
