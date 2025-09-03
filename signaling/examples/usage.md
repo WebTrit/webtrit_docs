@@ -5,8 +5,8 @@ To establish connection to the signaling server, clients must use the WebSocket 
 ##### Socket creation example
 
 ```js
-const url =
-  "wss://core.example.com/signaling/v1?token=aushdjkandqwbiauhsdjansndiuqhwbnemqsbdmas&force=false";
+const token = "...";
+const url =  "wss://core.example.com/signaling/v1?token=${token}&force=false";
 const socket = new WebSocket(url);
 
 function handleMessage(event) {
@@ -233,8 +233,8 @@ await pc.setLocalDescription(offer);
 //      "sdp": "..."
 //    }
 //  }
-
-- Call is established -
+//
+// - Call is established now
 ```
 
 After call is established, you can send the `hangup` request to end the call. This will trigger the `hangingup` event, and once the server confirms the hangup on sip side, a `hangup` event will be sent back.
@@ -264,8 +264,8 @@ await sendMessage({
 //    "event":"hangup",
 //    "call_id":"qwertyuiopasdfghjklzxcvbnm"
 //  }
-
-- Call is ended -
+//
+// - Call is ended now
 ```
 
 # Receiving a call
@@ -327,7 +327,7 @@ async function handleIncomingCall(data) {
   });
 }
 
-- The call is now accepted and established -
+// The call is now accepted and established
 ```
 
 Now you can hang up the call using the `hangup` request, similar to the outgoing call process.
@@ -339,5 +339,5 @@ await sendMessage({
   call_id: data.call_id,
 });
 
-- Call is ended -
+// Call is ended
 ```
