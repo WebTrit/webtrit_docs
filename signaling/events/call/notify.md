@@ -17,6 +17,7 @@ Notifying about incomming notify, that is actullay `SIP NOTIFY`.
 | content | string | + | content of the message |
 
 ## Dialogs notify event sub-properties
+
 | Key | Type | Required | Description |
 | --- | --- | :---: | --- |
 | user_active_calls | array of [UserActiveCall](#useractivecall) | + | user active calls |
@@ -29,6 +30,7 @@ Values:
 - `active`
 
 #### UserActiveCall
+
 | Index | Type | Required | Description |
 | --- | --- | :---: | --- |
 | id | string | + | id |
