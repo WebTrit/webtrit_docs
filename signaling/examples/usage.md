@@ -1,4 +1,6 @@
-# Establishing connection
+# Usage examples
+
+## Establishing connection
 
 To establish connection to the signaling server, clients must use the WebSocket protocol. The connection URL should be in the format described in: [signaling section](../index.md)
 
@@ -61,7 +63,7 @@ Or a sequence of handshake `unregistered` state and registration process message
 }
 ```
 
-# Transactions (acknowledgements)
+## Transactions (acknowledgements)
 
 Transactions are used to acknowledge requests sent by the client. Each request should include a `transaction` field, which is a unique identifier for that request. The server will respond with the same `transaction` value to confirm that the request was processed.
 
@@ -113,7 +115,7 @@ function sendMessage(message) {
 }
 ```
 
-# Keepalive
+## Keepalive
 
 The client should send keepalive messages to maintain the connection. The interval for these messages is specified in the `keepalive_interval` field of the handshake state message.
 
@@ -126,7 +128,7 @@ const keepaliveInterval = setInterval(function() {
 }, handshake.keepalive_interval);
 ```
 
-# Making call
+## Making call
 
 To initiate a call, the client must send a [outgoing call](../requests/call/outgoing_call.md) request with the necessary parameters and establish a WebRTC connection using the `RTCPeerConnection` API.
 
@@ -268,7 +270,7 @@ await sendMessage({
 // - Call is ended now
 ```
 
-# Receiving a call
+## Receiving a call
 
 To receive a call the client should add listener for [incoming call](../events/call/incoming_call.md) events.
 
