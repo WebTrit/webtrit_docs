@@ -8,7 +8,7 @@ To establish connection to the signaling server, clients must use the WebSocket 
 
 ```js
 const token = "...";
-const url =  "wss://core.example.com/signaling/v1?token=${token}&force=false";
+const url = `wss://core.example.com/signaling/v1?token=${token}&force=false`;
 const socket = new WebSocket(url);
 
 function handleMessage(event) {
@@ -17,7 +17,6 @@ function handleMessage(event) {
 }
 
 socket.addEventListener("message", handleMessage);
-socket.connect();
 ```
 
 Than first message should be a [handshake `state`](../handshake/state.md) message, which is sent by the server after the connection is established. Clients must wait for this message before sending any requests.
@@ -122,7 +121,7 @@ The client should send keepalive messages to maintain the connection. The interv
 ##### Keepalive setup example
 
 ```js
-const keepaliveInterval = setInterval(function() {
+const keepaliveInterval = setInterval(async function() {
   const response = await sendMessage({ handshake: "keepalive" });
   console.log(response); // { handshake: "keepalive", transaction: "transaction-0" }
 }, handshake.keepalive_interval);
