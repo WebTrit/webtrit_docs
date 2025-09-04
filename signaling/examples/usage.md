@@ -216,14 +216,14 @@ await pc.setLocalDescription(offer);
 //    "line": 0,
 //    "call_id": "qwertyuiopasdfghjklzxcvbnm"
 //  }
-//  
+//
 // - Call is ringing:
 //  {
 //    "event": "ringing",
 //    "line": 0,
 //    "call_id": "qwertyuiopasdfghjklzxcvbnm"
 //  }
-//  
+//
 // - Call is accepted:
 //  {
 //    "event": "accepted",
@@ -256,7 +256,7 @@ await sendMessage({
 //    "event":"hangingup",
 //    "call_id":"qwertyuiopasdfghjklzxcvbnm"
 //  }
-//  
+//
 // - Call was ended:
 //  {
 //    "code":200,
