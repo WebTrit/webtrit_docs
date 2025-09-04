@@ -9,6 +9,7 @@ Handshake `state` sends only ones after a successful Websocket connection opens.
 | timestamp | number | + | server system time in milliseconds |
 | registration | [RegistrationObject](#registrationobject) | + | session registration state |
 | lines | array of [LineObject](#lineobject) | + | session lines states |
+| user_active_calls | array of [UserActiveCall](#useractivecall) \| null | + | user active calls, or null if feature not supported |
 
 #### RegistrationObject
 
@@ -41,6 +42,19 @@ Values:
 | 0 | number | + | request or event server system time in milliseconds |
 | 1 | object | + | request or event object |
 
+#### UserActiveCall
+
+| Index | Type | Required | Description |
+| --- | --- | :---: | --- |
+| id | string | + | id |
+| state | string | + | call state e.g "proceeding \| confirmed" |
+| call_id | string | + | call id |
+| direction | string | + | call direction e.g "initiator \| recipient" |
+| local_tag | string | + | local tag |
+| remote_tag | string | + | remote tag |
+| remote_number | string | + | calle sip number |
+| remote_display_name | string | + | calle display name |
+
 ## Example
 
 Three lines with an active call on the first one and idle on others.
@@ -69,6 +83,18 @@ Three lines with an active call on the first one and idle on others.
     },
     null,
     null
+  ],
+  "user_active_calls": [
+    {
+      "id": "asldkaslkdkasdj",
+      "state": "confirmed",
+      "call_id": "qwertyuiopasdfghjklzxcvbnm",
+      "direction": "initiator",
+      "local_tag": "local-tag-123",
+      "remote_tag": "remote-tag-456",
+      "remote_number": "+1234567890",
+      "remote_display_name": "John Doe"
+    }
   ]
 }
 ```
