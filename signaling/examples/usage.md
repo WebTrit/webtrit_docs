@@ -114,7 +114,7 @@ function sendMessage(message) {
 }
 ```
 
-## Keepalive
+## Connection keepalive
 
 The client should send keepalive messages to maintain the connection. The interval for these messages is specified in the `keepalive_interval` field of the handshake state message.
 
@@ -127,7 +127,7 @@ const keepaliveInterval = setInterval(async function() {
 }, handshake.keepalive_interval);
 ```
 
-## Making call
+## Making a call
 
 To initiate a call, the client must send a [outgoing call](../requests/call/outgoing_call.md) request with the necessary parameters and establish a WebRTC connection using the `RTCPeerConnection` API.
 
