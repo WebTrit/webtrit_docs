@@ -192,7 +192,7 @@ switch (data.event) {
 ```
 
 After that you can send the `outgoing_call` request with the created SDP offer.
-Important to notice that setting the local description is happening after sending the `outgoing_call` request. Its because setting the local description will trigger the generation of ICE candidates emmidately, and we want to ensure that the server is ready to receive them.
+Important to notice that setting the local description is happening after sending the `outgoing_call` request. Its because setting the local description will trigger the generation of ICE candidates immediately, and we want to ensure that the server is ready to receive them.
 
 ```js
 const call_id = "qwertyuiopasdfghjklzxcvbnm"; // Generate a unique call ID
