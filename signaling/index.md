@@ -159,5 +159,9 @@ Key characteristics of a call:
 
 [Self-recoverable mechanism](features/self_recoverable_mechanism.md)
 
+## Walkthrough
+
+[Usage examples](examples/usage.md)
+
 [^1]: Only for _Line_ and _Call_.
 [^2]: Only for _Call_.
