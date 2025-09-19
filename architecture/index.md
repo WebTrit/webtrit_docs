@@ -177,7 +177,7 @@ webtritClient.onCallStateChanged(state => {
 - CDR generation and billing integration
 ```
 
-### The Magic
-WebTrit acts as a **protocol translator and complexity absorber**, enabling developers to build modern communication apps using familiar web technologies while seamlessly connecting to battle-tested enterprise telecom systems.
+### Solving the softphone problem
+WebTrit handles the complex parts so you don't have to. Instead of wrestling with VoIP protocols, you get simple web APIs that connect seamlessly to enterprise telecom systems. We take care of the hard parts so you can focus on building great apps.
 
 **Result**: You get the reliability and features of traditional telecom infrastructure with the development speed and flexibility of modern web platforms.
